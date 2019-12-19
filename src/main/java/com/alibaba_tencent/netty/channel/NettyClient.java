@@ -11,8 +11,6 @@ import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 import io.netty.util.CharsetUtil;
 
-import java.util.TreeMap;
-
 /**
  * @ClassName: NettyClient
  * @Desc:

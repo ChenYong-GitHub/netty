@@ -26,10 +26,14 @@ public class NettyServer {
     private static final EventLoopGroup bossGroup = new NioEventLoopGroup(BIZ_GROUP_SIZE);
     private static final EventLoopGroup workGroup = new NioEventLoopGroup(BIZ_THREAD_SIZE);
 
-    public static void start() throws Exception{
+    public static void start() {
+        try {
+
+        // ServerBootstrap是Netty的辅助类
         ServerBootstrap serverBootstrap = new ServerBootstrap();
         serverBootstrap.group(bossGroup, workGroup)
                 .channel(NioServerSocketChannel.class)
+                // 设置连入服务端的Client的SocketChannel的处理器
                 .childHandler(new ChannelInitializer<Channel>() {
                     @Override
                     protected void initChannel(Channel channel) throws Exception {
@@ -41,8 +45,15 @@ public class NettyServer {
                     }
                 });
         ChannelFuture channelFuture = serverBootstrap.bind(IP, PORT).sync();
+        // 用来监听服务端的关闭事件（阻塞的），如果服务器没关闭，则一直阻塞，当服务器关闭，则执行后续的步骤，然后整个服务关闭
         channelFuture.channel().closeFuture().sync();
         System.out.println("server start");
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            shutdown();
+        }
+
     }
 
     public static void shutdown() {

@@ -1,4 +1,4 @@
-package com.alibaba_tencent.bio.client;
+package com.alibaba_tencent.nio.client;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
