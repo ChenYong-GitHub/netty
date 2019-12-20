@@ -51,6 +51,9 @@ public class BioServer {
             while (true) {
                 System.out.println("read阻塞在此 -----");
                 System.out.println("handler当前线程：" + Thread.currentThread().getName());
+                /*
+                 * 别忘了，read是将流中的数据读到bytes数组中，如果是输入流的write()方法，则是往流中写数据
+                 */
                 int read = in.read(bytes);
                 System.out.println("read执行完毕");
                 if (read != -1) {
