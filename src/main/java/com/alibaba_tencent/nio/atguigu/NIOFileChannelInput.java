@@ -1,4 +1,4 @@
-package com.alibaba_tencent.nio.atguigu.chnanel;
+package com.alibaba_tencent.nio.atguigu;
 
 import java.io.File;
 import java.io.FileInputStream;

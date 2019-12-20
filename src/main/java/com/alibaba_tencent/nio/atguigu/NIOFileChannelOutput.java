@@ -1,4 +1,4 @@
-package com.alibaba_tencent.nio.atguigu.chnanel;
+package com.alibaba_tencent.nio.atguigu;
 
 import java.io.FileOutputStream;
 import java.nio.ByteBuffer;
