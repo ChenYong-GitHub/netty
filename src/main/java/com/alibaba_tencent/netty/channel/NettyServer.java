@@ -20,10 +20,11 @@ public class NettyServer {
     private static final String IP = "127.0.0.1";
     private static final int PORT = 6666;
 
-    private static final int BIZ_GROUP_SIZE = Runtime.getRuntime().availableProcessors() * 2;
+    // private static final int BIZ_GROUP_SIZE = Runtime.getRuntime().availableProcessors() * 2;
     private static final int BIZ_THREAD_SIZE = 100;
 
-    private static final EventLoopGroup bossGroup = new NioEventLoopGroup(BIZ_GROUP_SIZE);
+    // private static final EventLoopGroup bossGroup = new NioEventLoopGroup(BIZ_GROUP_SIZE);
+    private static final EventLoopGroup bossGroup = new NioEventLoopGroup();
     private static final EventLoopGroup workGroup = new NioEventLoopGroup(BIZ_THREAD_SIZE);
 
     public static void start() {

@@ -1,4 +1,4 @@
-package com.alibaba_tencent.nio.atguigu;
+package com.alibaba_tencent.nio.base;
 
 import java.nio.IntBuffer;
 
